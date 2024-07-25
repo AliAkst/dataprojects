@@ -1,6 +1,8 @@
 !pip install yfinance
 !pip install bs4
 !pip install nbformat
+
+
 import yfinance as yf
 import pandas as pd
 import requests
@@ -8,9 +10,13 @@ from bs4 import BeautifulSoup
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import warnings
+
+
 # Ignore all warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 # we define a function to  make a graph
+
+
 def make_graph(stock_data, revenue_data, stock):
     fig = make_subplots(rows=2, cols=1, shared_xaxes=True, subplot_titles=("Historical Share Price", "Historical Revenue"), vertical_spacing = .3)
     stock_data_specific = stock_data[stock_data.Date <= '2021--06-14']
